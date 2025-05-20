@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "gym-battleship-llm"
+version = "0.1.0"
+description = "Battleship environment for RL and LLM strategy distillation"
+authors = ["User"]
+readme = "README.md"
+packages = [{ include = "gym_battleship" }]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.12"
+gym = "*"
+gymnasium = ">=0.29.1"
+setuptools = "*"
+numpy = "*"
+pandas = "*"
+stable-baselines3 = {version = ">=2.2.1", extras = ["cpu"]}
+torch = ">=2.1.0"
+tqdm = ">=4.66.1"
+matplotlib = ">=3.8.0"
+ipython = ">=8.18.1"
+openai = ">=1.3.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

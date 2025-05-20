@@ -1,5 +1,6 @@
 import numpy as np
-from gym import spaces
+from gymnasium import spaces
+from typing import Any
 from copy import deepcopy
 
 from typing import Union
@@ -31,8 +32,10 @@ class AdversarialBattleshipEnv(BattleshipEnv):  # noqa
             spaces.Box(low=0, high=1, shape=(self.board_size[0], self.board_size[1]))
         ))
 
-    def reset(self) -> Tuple[np.ndarray, np.array]:
-        return self.defender_reset()
+    def reset(self, seed=None, options=None) -> Tuple[Tuple[np.ndarray, np.array], dict]:
+        super().reset(seed=seed)
+        obs = self.defender_reset()
+        return obs, {}
 
     def defender_reset(self) -> Tuple[np.ndarray, np.array]:
         self.done = False
@@ -48,7 +51,7 @@ class AdversarialBattleshipEnv(BattleshipEnv):  # noqa
         self.observation = np.zeros((2, *self.board_size), dtype=np.float32)
         return self.observation
 
-    def attacker_step(self, raw_action: Union[int, tuple]) -> Tuple[np.ndarray, int, bool, dict]:
+    def attacker_step(self, raw_action: Union[int, tuple]) -> Tuple[np.ndarray, float, bool, bool, dict]:
         return self.step(raw_action=raw_action)
 
     def _place_ship(self, ship: Ship) -> None:
@@ -68,8 +71,12 @@ class AdversarialBattleshipEnv(BattleshipEnv):  # noqa
         else:
             raise ValueError
 
-    def defender_step(self, raw_action: Union[int, tuple], orientation: Union[str, int]) -> \
-            Optional[Tuple[Tuple[np.ndarray, np.array], float, bool, dict]]:
+    def defender_step(self, raw_action: Any, orientation: Union[str, int]) -> \
+            Optional[Tuple[Tuple[np.ndarray, np.array], float, bool, bool, dict]]:
+
+        # Convert numpy ndarray to int if needed
+        if hasattr(raw_action, 'dtype') and np.issubdtype(raw_action.dtype, np.integer):
+            raw_action = int(raw_action)
 
         if isinstance(raw_action, int):
             assert (0 <= raw_action < self.board_size[0] * self.board_size[1]), \
@@ -82,13 +89,13 @@ class AdversarialBattleshipEnv(BattleshipEnv):  # noqa
             action = Action(x=raw_action[0], y=raw_action[1])
 
         else:
-            raise AssertionError("Invalid action (Unsupported raw_action type)")
+            raise AssertionError(f"Invalid action (Unsupported raw_action type): {type(raw_action)}")
 
         assert orientation in (0, 1, "Horizontal", "Vertical"), f"Invalid Orientation: {orientation}"
 
         if self.done:
             reward = self.step_count / self.episode_steps
-            return (self.board_generated, self.remaining_ships), reward, True, {}
+            return (self.board_generated, self.remaining_ships), reward, True, False, {}
 
         elif np.any(self.remaining_ships):
 
@@ -103,7 +110,7 @@ class AdversarialBattleshipEnv(BattleshipEnv):  # noqa
             if need_to_wait_attacker:
                 return None
             else:
-                return (self.board, self.remaining_ships), 0, False, {}
+                return (self.board, self.remaining_ships), 0, False, False, {}
         else:
             return None
 

@@ -1,6 +1,7 @@
-import gym
+import gymnasium as gym
 import numpy as np
-from gym import spaces
+from gymnasium import spaces
+from typing import Any
 from copy import deepcopy
 from typing import Union
 from typing import Tuple
@@ -56,7 +57,11 @@ class BattleshipEnv(gym.Env):
         self.action_space = spaces.Discrete(self.board_size[0] * self.board_size[1])
         self.observation_space = spaces.Box(low=0, high=1, shape=(2, self.board_size[0], self.board_size[1]))
 
-    def step(self, raw_action: Union[int, tuple]) -> Tuple[np.ndarray, int, bool, dict]:
+    def step(self, raw_action: Any) -> Tuple[np.ndarray, float, bool, bool, dict]:
+        # Convert numpy ndarray to int if needed
+        if hasattr(raw_action, 'dtype') and np.issubdtype(raw_action.dtype, np.integer):
+            raw_action = int(raw_action)
+            
         if isinstance(raw_action, int):
             assert (0 <= raw_action < self.board_size[0]*self.board_size[1]),\
                 "Invalid action (The encoded action is outside of the limits)"
@@ -68,7 +73,7 @@ class BattleshipEnv(gym.Env):
             action = Action(x=raw_action[0], y=raw_action[1])
 
         else:
-            raise AssertionError("Invalid action (Unsupported raw_action type)")
+            raise AssertionError(f"Invalid action (Unsupported raw_action type): {type(raw_action)}")
 
         self.step_count += 1
 
@@ -83,29 +88,30 @@ class BattleshipEnv(gym.Env):
             # Win (No boat left)
             if not self.board.any():
                 self.done = True
-                return self.observation, self.reward_dictionary['win'], self.done, {}
-            return self.observation, self.reward_dictionary['touched'], self.done, {}
+                return self.observation, self.reward_dictionary['win'], self.done, False, {}
+            return self.observation, self.reward_dictionary['touched'], self.done, False, {}
 
         # Repeat touched (observation[0, x, y] == 1)
         elif self.observation[0, action.x, action.y] == 1:
-            return self.observation, self.reward_dictionary['repeat_touched'], self.done, {}
+            return self.observation, self.reward_dictionary['repeat_touched'], self.done, False, {}
 
         # Repeat missed (observation[1, x, y] == 1)
         elif self.observation[1, action.x, action.y] == 1:
-            return self.observation, self.reward_dictionary['repeat_missed'], self.done, {}
+            return self.observation, self.reward_dictionary['repeat_missed'], self.done, False, {}
 
         # Missed (Action not repeated and boat(s) not touched)
         else:
             self.observation[1, action.x, action.y] = 1
-            return self.observation, self.reward_dictionary['missed'], self.done, {}
+            return self.observation, self.reward_dictionary['missed'], self.done, False, {}
 
-    def reset(self) -> np.ndarray:
+    def reset(self, seed=None, options=None) -> Tuple[np.ndarray, dict]:
+        super().reset(seed=seed)
         self._set_board()
         self.board_generated = deepcopy(self.board)
         self.observation = np.zeros((2, *self.board_size), dtype=np.float32)
         self.step_count = 0
         self.done = False
-        return self.observation
+        return self.observation, {}
 
     def _set_board(self) -> None:
         self.board = np.zeros(self.board_size, dtype=np.float32)

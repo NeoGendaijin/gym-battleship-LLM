@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: gym_battleship
+Version: 0.0.1
+License-File: LICENSE
+Requires-Dist: gym
+Requires-Dist: numpy
+Requires-Dist: pandas
+Dynamic: license-file
+Dynamic: requires-dist
