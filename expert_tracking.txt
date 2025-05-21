@@ -1,0 +1,656 @@
+Expert Model Tracking Report
+===========================
+
+
+===== Episode 1 =====
+Number of ship cells: 17.0
+Ship positions on the board:
+. . . . . . 
+. . S S S S 
+S S S S S . 
+. S S S . . 
+. S S S S S 
+. . . . . . 
+Turn 1: Action (3, 1) [flat: 9]
+  HIT at position (3, 1)
+Turn 2: Action (2, 0) [flat: 2]
+  MISS at position (2, 0)
+Turn 3: Action (2, 1) [flat: 8]
+  HIT at position (2, 1)
+Turn 4: Action (2, 3) [flat: 20]
+  HIT at position (2, 3)
+Turn 5: Action (2, 4) [flat: 26]
+  HIT at position (2, 4)
+Turn 6: Action (4, 4) [flat: 28]
+  HIT at position (4, 4)
+Turn 7: Action (1, 1) [flat: 7]
+  MISS at position (1, 1)
+Turn 8: Action (1, 4) [flat: 25]
+  HIT at position (1, 4)
+Turn 9: Action (4, 1) [flat: 10]
+  HIT at position (4, 1)
+Turn 10: Action (2, 5) [flat: 32]
+  MISS at position (2, 5)
+Turn 11: Action (1, 3) [flat: 19]
+  HIT at position (1, 3)
+Turn 12: Action (1, 0) [flat: 1]
+  MISS at position (1, 0)
+Turn 13: Action (5, 1) [flat: 11]
+  HIT at position (5, 1)
+Turn 14: Action (3, 4) [flat: 27]
+  HIT at position (3, 4)
+Turn 15: Action (3, 2) [flat: 15]
+  HIT at position (3, 2)
+Turn 16: Action (4, 0) [flat: 4]
+  MISS at position (4, 0)
+Turn 17: Action (2, 2) [flat: 14]
+  HIT at position (2, 2)
+Turn 18: Action (0, 3) [flat: 18]
+  MISS at position (0, 3)
+Turn 19: Action (0, 4) [flat: 24]
+  MISS at position (0, 4)
+Turn 20: Action (3, 5) [flat: 33]
+  MISS at position (3, 5)
+Turn 21: Action (5, 3) [flat: 23]
+  MISS at position (5, 3)
+Turn 22: Action (4, 2) [flat: 16]
+  HIT at position (4, 2)
+Turn 23: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 24: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 25: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 26: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 27: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 28: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 29: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 30: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 31: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 32: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 33: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 34: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 35: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 36: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 37: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 38: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 39: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 40: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 41: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 42: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 43: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 44: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 45: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 46: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 47: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 48: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 49: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 50: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 51: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 52: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 53: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 54: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 55: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 56: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 57: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 58: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 59: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 60: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 61: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 62: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 63: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 64: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 65: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 66: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 67: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 68: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 69: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 70: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 71: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 72: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 73: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 74: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 75: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 76: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 77: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 78: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 79: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 80: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 81: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 82: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 83: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 84: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 85: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 86: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 87: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 88: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 89: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 90: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 91: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 92: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 93: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 94: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 95: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 96: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 97: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 98: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 99: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+Turn 100: Action (3, 4) [flat: 27]
+  REPEAT action at position (3, 4)
+
+Episode summary:
+  Turns taken: 100
+  Hits: 13 / 17.0 ship cells
+  Unique actions: 22 / 100 turns
+  Repeated actions: 78
+  Win: False
+
+===== Episode 2 =====
+Number of ship cells: 17.0
+Ship positions on the board:
+. . . S S . 
+S S S S S . 
+. . . S . S 
+. . S S . S 
+. . S S . S 
+. . S S . . 
+Turn 1: Action (3, 1) [flat: 9]
+  HIT at position (3, 1)
+Turn 2: Action (2, 0) [flat: 2]
+  MISS at position (2, 0)
+Turn 3: Action (2, 1) [flat: 8]
+  HIT at position (2, 1)
+Turn 4: Action (2, 3) [flat: 20]
+  HIT at position (2, 3)
+Turn 5: Action (2, 4) [flat: 26]
+  HIT at position (2, 4)
+Turn 6: Action (4, 4) [flat: 28]
+  MISS at position (4, 4)
+Turn 7: Action (1, 1) [flat: 7]
+  HIT at position (1, 1)
+Turn 8: Action (4, 1) [flat: 10]
+  HIT at position (4, 1)
+Turn 9: Action (2, 5) [flat: 32]
+  HIT at position (2, 5)
+Turn 10: Action (0, 4) [flat: 24]
+  MISS at position (0, 4)
+Turn 11: Action (5, 3) [flat: 23]
+  HIT at position (5, 3)
+Turn 12: Action (3, 5) [flat: 33]
+  HIT at position (3, 5)
+Turn 13: Action (4, 0) [flat: 4]
+  HIT at position (4, 0)
+Turn 14: Action (0, 1) [flat: 6]
+  HIT at position (0, 1)
+Turn 15: Action (4, 5) [flat: 34]
+  MISS at position (4, 5)
+Turn 16: Action (3, 0) [flat: 3]
+  HIT at position (3, 0)
+Turn 17: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 18: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 19: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 20: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 21: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 22: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 23: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 24: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 25: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 26: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 27: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 28: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 29: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 30: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 31: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 32: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 33: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 34: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 35: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 36: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 37: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 38: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 39: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 40: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 41: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 42: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 43: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 44: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 45: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 46: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 47: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 48: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 49: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 50: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 51: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 52: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 53: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 54: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 55: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 56: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 57: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 58: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 59: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 60: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 61: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 62: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 63: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 64: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 65: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 66: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 67: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 68: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 69: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 70: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 71: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 72: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 73: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 74: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 75: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 76: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 77: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 78: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 79: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 80: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 81: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 82: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 83: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 84: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 85: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 86: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 87: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 88: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 89: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 90: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 91: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 92: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 93: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 94: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 95: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 96: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 97: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 98: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 99: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+Turn 100: Action (1, 1) [flat: 7]
+  REPEAT action at position (1, 1)
+
+Episode summary:
+  Turns taken: 100
+  Hits: 12 / 17.0 ship cells
+  Unique actions: 16 / 100 turns
+  Repeated actions: 84
+  Win: False
+
+===== Episode 3 =====
+Number of ship cells: 17.0
+Ship positions on the board:
+S S S S . . 
+. . . . . . 
+S S S S S . 
+. S S S . . 
+. . . S S . 
+. . . S S S 
+Turn 1: Action (3, 1) [flat: 9]
+  MISS at position (3, 1)
+Turn 2: Action (2, 0) [flat: 2]
+  HIT at position (2, 0)
+Turn 3: Action (2, 1) [flat: 8]
+  MISS at position (2, 1)
+Turn 4: Action (2, 3) [flat: 20]
+  HIT at position (2, 3)
+Turn 5: Action (2, 5) [flat: 32]
+  MISS at position (2, 5)
+Turn 6: Action (2, 4) [flat: 26]
+  MISS at position (2, 4)
+Turn 7: Action (0, 4) [flat: 24]
+  MISS at position (0, 4)
+Turn 8: Action (4, 0) [flat: 4]
+  MISS at position (4, 0)
+Turn 9: Action (4, 5) [flat: 34]
+  HIT at position (4, 5)
+Turn 10: Action (3, 0) [flat: 3]
+  HIT at position (3, 0)
+Turn 11: Action (1, 3) [flat: 19]
+  HIT at position (1, 3)
+Turn 12: Action (1, 4) [flat: 25]
+  MISS at position (1, 4)
+Turn 13: Action (2, 2) [flat: 14]
+  HIT at position (2, 2)
+Turn 14: Action (0, 1) [flat: 6]
+  MISS at position (0, 1)
+Turn 15: Action (3, 5) [flat: 33]
+  HIT at position (3, 5)
+Turn 16: Action (5, 2) [flat: 17]
+  MISS at position (5, 2)
+Turn 17: Action (4, 3) [flat: 22]
+  MISS at position (4, 3)
+Turn 18: Action (1, 0) [flat: 1]
+  HIT at position (1, 0)
+Turn 19: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 20: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 21: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 22: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 23: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 24: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 25: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 26: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 27: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 28: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 29: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 30: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 31: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 32: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 33: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 34: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 35: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 36: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 37: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 38: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 39: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 40: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 41: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 42: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 43: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 44: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 45: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 46: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 47: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 48: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 49: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 50: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 51: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 52: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 53: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 54: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 55: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 56: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 57: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 58: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 59: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 60: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 61: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 62: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 63: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 64: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 65: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 66: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 67: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 68: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 69: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 70: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 71: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 72: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 73: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 74: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 75: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 76: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 77: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 78: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 79: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 80: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 81: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 82: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 83: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 84: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 85: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 86: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 87: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 88: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 89: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 90: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 91: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 92: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 93: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 94: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 95: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 96: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 97: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 98: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 99: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+Turn 100: Action (2, 5) [flat: 32]
+  REPEAT action at position (2, 5)
+
+Episode summary:
+  Turns taken: 100
+  Hits: 8 / 17.0 ship cells
+  Unique actions: 18 / 100 turns
+  Repeated actions: 82
+  Win: False
+
+Tracking completed. Check for patterns in model behavior.

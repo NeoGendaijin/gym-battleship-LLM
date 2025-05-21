@@ -15,11 +15,12 @@ mkdir -p $EXPERT_DIR $TRAJ_DIR $LPML_DIR $DISTILL_DIR $EVAL_DIR
 
 # Define parameters
 BOARD_SIZE=6
-EXPERT_TIMESTEPS=1000  # Slightly longer test run
+EXPERT_TIMESTEPS=50000  # Reduced for faster training
 SEED=42
-TRAJECTORIES=5  # Further reduced for super-quick testing
-MAX_LPML_TRAJECTORIES=2
-EPOCHS=5
+TRAJECTORIES=1000  # Sufficient for LPML/strategy distillation
+MAX_LPML_TRAJECTORIES=300  # Annotation trajectories count
+MAX_CONCURRENT=10  # Maximum number of concurrent API requests for async annotation
+EPOCHS=10
 
 # Check for OpenAI API key
 if [ -z "$OPENAI_API_KEY" ]; then
@@ -35,6 +36,7 @@ SKIP_LPML=false
 SKIP_STRATEGY=false
 SKIP_KL=false
 SKIP_EVAL=false
+TIMESTEPS=$EXPERT_TIMESTEPS  # Default value
 
 while [[ $# -gt 0 ]]; do
     key="$1"
@@ -63,6 +65,16 @@ while [[ $# -gt 0 ]]; do
         SKIP_EVAL=true
         shift
         ;;
+        --timesteps)
+        TIMESTEPS="$2"
+        shift
+        shift
+        ;;
+        --board-size)
+        BOARD_SIZE="$2"
+        shift
+        shift
+        ;;
         --help)
         echo "Usage: ./run_experiment.sh [options]"
         echo "Options:"
@@ -72,6 +84,8 @@ while [[ $# -gt 0 ]]; do
         echo "  --skip-strategy      Skip strategy-based distillation"
         echo "  --skip-kl            Skip KL-based distillation"
         echo "  --skip-eval          Skip evaluation"
+        echo "  --timesteps N        Set the number of timesteps for expert training (default: $EXPERT_TIMESTEPS)"
+        echo "  --board-size N       Set the board size (default: $BOARD_SIZE)"
         echo "  --help               Show this help message"
         exit 0
         ;;
@@ -83,12 +97,12 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-# Step 1: Train expert agent
-EXPERT_MODEL="$EXPERT_DIR/best.zip"
+# Step 1: Train expert agent with MaskablePPO
+EXPERT_MODEL="$EXPERT_DIR/maskable_expert.zip"
 if [ "$SKIP_EXPERT" = false ]; then
-    echo "=== Step 1: Training expert agent ==="
-    python expert/train_expert.py \
-        --total-timesteps $EXPERT_TIMESTEPS \
+    echo "=== Step 1: Training expert agent with MaskablePPO ==="
+    python expert/train_basic.py \
+        --total-timesteps $TIMESTEPS \
         --save-path $EXPERT_MODEL \
         --board-size $BOARD_SIZE \
         --seed $SEED
@@ -105,7 +119,8 @@ if [ "$SKIP_TRAJECTORIES" = false ]; then
         --episodes $TRAJECTORIES \
         --board-size $BOARD_SIZE \
         --out $TRAJECTORY_FILE \
-        --seed $SEED
+        --seed $SEED \
+        --use-maskable  # Add this flag since we're using MaskablePPO
 else
     echo "=== Skipping Step 2: Trajectory collection ==="
 fi
@@ -113,16 +128,17 @@ fi
 # Step 3: LPML annotation
 LPML_FILE="$LPML_DIR/battleship.xml"
 if [ "$SKIP_LPML" = false ]; then
-    echo "=== Step 3: LPML annotation ==="
+    echo "=== Step 3: LPML annotation (Async) ==="
     if [ -z "$OPENAI_API_KEY" ]; then
         echo "Error: OPENAI_API_KEY environment variable not set. Cannot perform LPML annotation."
         exit 1
     fi
-    python lpml/annotate.py \
+    python lpml/async_annotate.py \
         --traj $TRAJECTORY_FILE \
         --out $LPML_FILE \
         --n_candidates 3 \
-        --max_trajectories $MAX_LPML_TRAJECTORIES
+        --max_trajectories $MAX_LPML_TRAJECTORIES \
+        --max_concurrent $MAX_CONCURRENT
 else
     echo "=== Skipping Step 3: LPML annotation ==="
 fi
@@ -141,7 +157,7 @@ else
     echo "=== Skipping Step 4A: Strategy-based distillation ==="
 fi
 
-# Step 4B: Train KL-based student policy
+# Step 4B: Train KL-based student policy with improved implementation
 KL_MODEL="$DISTILL_DIR/student_kl.pth"
 if [ "$SKIP_KL" = false ]; then
     echo "=== Step 4B: Training KL-based student policy ==="

@@ -1,0 +1,14 @@
+/home/horiguchi/.cache/pypoetry/virtualenvs/gym-battleship-llm-AWYARV_F-py3.11/lib/python3.11/site-packages/torch/cuda/__init__.py:129: UserWarning: CUDA initialization: The NVIDIA driver on your system is too old (found version 11070). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver. (Triggered internally at /pytorch/c10/cuda/CUDAFunctions.cpp:109.)
+  return torch._C._cuda_getDeviceCount() > 0
+Loading expert model from expert/best.zip
+Model observation space: Box(0.0, 1.0, (2, 6, 6), float32)
+Model action space: Discrete(36)
+Environment observation space: Box(0.0, 1.0, (2, 6, 6), float32)
+Environment action space: Discrete(36)
+Observation spaces match: True
+Action spaces match: True
+Model predicted action: 9 (type: <class 'numpy.ndarray'>)
+Action shape: ()
+Action value: 9
+Action is valid in the environment
+Model check completed
