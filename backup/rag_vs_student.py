@@ -1,26 +1,28 @@
-#!/usr/bin/env python
-"""
-Compare RAG-based agent with LPML access against Student model without LPML access
-in the Battleship environment.
-"""
-
 import os
-import argparse
 import gymnasium as gym
 import importlib
 import gym_battleship
 importlib.reload(gym_battleship)
 import torch
+import openai
 import numpy as np
 from tqdm import tqdm
 import asyncio
 from openai import AsyncOpenAI
 import json
 
+# --- 設定 ---
+OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
+OPENAI_MODEL = "gpt-4o"
+STUDENT_MODEL_PATH = os.path.join(os.path.dirname(__file__), '../distill/student_strategy.pth')
+N_EPISODES = 10  # 少ないエピソード数で素早く終わらせる
+RESULTS_PATH = os.path.join(os.path.dirname(__file__), "rag_vs_student_results.json")
+BOARD_SIZE = 6  # サイズを6x6に変更
+
 # --- OpenAI RAGエージェント（async対応, 英語プロンプト） ---
 class AsyncOpenAIAgent:
-    def __init__(self, api_key=None, model="gpt-4o"):
-        self.api_key = api_key or os.environ.get("OPENAI_API_KEY")
+    def __init__(self, api_key=None, model=OPENAI_MODEL):
+        self.api_key = api_key or OPENAI_API_KEY
         if not self.api_key:
             raise ValueError("OpenAI API key must be set in OPENAI_API_KEY env or passed to OpenAIAgent")
         self.client = AsyncOpenAI(api_key=self.api_key)
@@ -116,19 +118,13 @@ class StudentAgent:
                 logits = logits[0]
             action = torch.argmax(logits, dim=1).item()
         size = int(np.sqrt(logits.shape[1]))
-        return (action % size, action // size)
+        return (action // size, action % size)
 
 # --- 非同期対戦シミュレーション（可視化・保存付き） ---
-async def run_battle_async(rag_agent, student_agent, n_episodes=10, results_path=None, board_size=6):
+async def run_battle_async(rag_agent, student_agent, n_episodes=100, results_path=RESULTS_PATH, board_size=BOARD_SIZE):
     rag_wins = 0
     student_wins = 0
     all_results = []
-    
-    if results_path is None:
-        results_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../eval/results")
-        os.makedirs(results_dir, exist_ok=True)
-        results_path = os.path.join(results_dir, f"{os.path.basename(__file__).split('.')[0]}_results.json")
-    
     for ep in tqdm(range(n_episodes), desc="Episodes"):
         env = gym.make('Battleship-v0', board_size=(board_size, board_size))
         obs, info = env.reset()
@@ -169,95 +165,23 @@ async def run_battle_async(rag_agent, student_agent, n_episodes=10, results_path
                 "board": view_board.tolist()
             })
             obs = obs_next
-            winner = agent_name if terminated else None
+            winner = info.get('winner', None)
             turn += 1
-        
         episode_log["winner"] = winner
         all_results.append(episode_log)
         if winner == 'rag':
             rag_wins += 1
         elif winner == 'student':
             student_wins += 1
-    
-    print(f'RAG Agent wins: {rag_wins}/{n_episodes} ({rag_wins/n_episodes*100:.1f}%)')
-    print(f'Student Agent wins: {student_wins}/{n_episodes} ({student_wins/n_episodes*100:.1f}%)')
+    print(f'OpenAI Agent wins: {rag_wins}/{n_episodes}')
+    print(f'Student Agent wins: {student_wins}/{n_episodes}')
     print(f'Draws: {n_episodes - rag_wins - student_wins}')
-    
     # 保存
     with open(results_path, "w", encoding="utf-8") as f:
-        json.dump({
-            "rag_wins": rag_wins,
-            "student_wins": student_wins,
-            "draws": n_episodes - rag_wins - student_wins,
-            "episodes": all_results
-        }, f, ensure_ascii=False, indent=2)
-    
+        json.dump(all_results, f, ensure_ascii=False, indent=2)
     print(f"Results saved to {results_path}")
-    return rag_wins, student_wins
-
-def parse_args():
-    parser = argparse.ArgumentParser(description="Compare RAG-based agent vs Student in Battleship")
-    parser.add_argument(
-        "--student-model",
-        type=str,
-        default="distill/hybrid_student.pth",
-        help="Path to the student model"
-    )
-    parser.add_argument(
-        "--episodes",
-        type=int,
-        default=10,
-        help="Number of episodes for comparison"
-    )
-    parser.add_argument(
-        "--board-size",
-        type=int,
-        default=6,
-        help="Size of the Battleship board"
-    )
-    parser.add_argument(
-        "--openai-model",
-        type=str,
-        default="gpt-4o",
-        help="OpenAI model to use for RAG agent"
-    )
-    parser.add_argument(
-        "--output-file",
-        type=str,
-        default=None,
-        help="Path to save results JSON (default: eval/results/rag_vs_student_results.json)"
-    )
-    return parser.parse_args()
-
-async def main_async():
-    args = parse_args()
-    
-    print(f"=== RAG vs Student comparison ===")
-    print(f"Student model: {args.student_model}")
-    print(f"OpenAI model: {args.openai_model}")
-    print(f"Board size: {args.board_size}x{args.board_size}")
-    print(f"Episodes: {args.episodes}")
-    
-    # Create agents
-    rag_agent = AsyncOpenAIAgent(model=args.openai_model)
-    student_agent = StudentAgent(args.student_model)
-    
-    # Run comparison
-    rag_wins, student_wins = await run_battle_async(
-        rag_agent,
-        student_agent,
-        n_episodes=args.episodes,
-        results_path=args.output_file,
-        board_size=args.board_size
-    )
-    
-    return rag_wins > student_wins
-
-def main():
-    """
-    Wrapper function to run the async main function.
-    """
-    return asyncio.run(main_async())
 
 if __name__ == '__main__':
-    main()
+    rag_agent = AsyncOpenAIAgent()
+    student_agent = StudentAgent(STUDENT_MODEL_PATH)
+    asyncio.run(run_battle_async(rag_agent, student_agent, N_EPISODES, RESULTS_PATH))
